@@ -70,3 +70,29 @@ core.register_node("rusty_nodes:node_2", {
 		}
 	}
 })
+
+
+core.register_craft({
+	output = "rusty_nodes:rust",
+	recipe = {
+		{"dye:brown"},
+		{"default:steelblock"},
+	}
+})
+
+core.register_craft({
+	output = "rusty_nodes:node_1",
+	recipe = {
+		{"rusty_nodes:rust","","rusty_nodes:rust"},
+		{"","rusty_nodes:rust",""},
+        {"rusty_nodes:rust","","rusty_nodes:rust"},
+	}
+})
+
+core.register_craft({
+	output = "rusty_nodes:node_2",
+	recipe = {
+		{"rusty_nodes:rust","rusty_nodes:rust","rusty_nodes:rust"},
+        {"rusty_nodes:rust","","rusty_nodes:rust"},
+	}
+})
