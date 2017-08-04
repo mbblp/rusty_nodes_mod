@@ -72,6 +72,38 @@ core.register_node("rusty_nodes:node_2", {
 })
 
 
+core.register_node("rusty_nodes:node_3", {
+	description = "rusty node 3",
+	tiles = {
+		"rusty_nodes_rust.png",
+
+	},
+	groups = {choppy = 3, oddly_breakable_by_hand = 2,},
+	drawtype = "nodebox",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, 0, -0.25, 0.5, 0.5, 0.25}, -- NodeBox18
+			{-0.5, 0.25, -0.5, -0.375, 0.5, -0.25}, -- NodeBox19
+			{0.375, 0.25, -0.5, 0.5, 0.5, -0.25}, -- NodeBox20
+			{-0.375, 0.25, -0.375, -0.25, 0.5, -0.25}, -- NodeBox21
+			{-0.3125, 0.25, -0.4375, -0.1875, 0.5, -0.3125}, -- NodeBox22
+			{-0.25, 0.25, -0.5, -0.125, 0.5, -0.375}, -- NodeBox23
+			{-0.125, 0.25, -0.5, -0.0625, 0.5, -0.4375}, -- NodeBox24
+			{0.25, 0.25, -0.375, 0.375, 0.5, -0.25}, -- NodeBox25
+			{0.1875, 0.25, -0.4375, 0.3125, 0.5, -0.3125}, -- NodeBox26
+			{0.125, 0.25, -0.5, 0.25, 0.5, -0.375}, -- NodeBox27
+			{0.0625, 0.25, -0.5, 0.125, 0.5, -0.4375}, -- NodeBox28
+			{-0.1875, -0.125, -0.1875, 0.1875, 0, 0.1875}, -- NodeBox12
+			{-0.1875, -0.5, -0.1875, 0.1875, -0.375, 0.1875}, -- NodeBox13
+			{-0.125, -0.375, -0.125, 0.125, -0.125, 0.125}, -- NodeBox16
+		}
+	}
+})
+
+
 core.register_craft({
 	output = "rusty_nodes:rust",
 	recipe = {
@@ -92,6 +124,15 @@ core.register_craft({
 core.register_craft({
 	output = "rusty_nodes:node_2",
 	recipe = {
+		{"rusty_nodes:rust","rusty_nodes:rust","rusty_nodes:rust"},
+        {"rusty_nodes:rust","","rusty_nodes:rust"},
+	}
+})
+
+core.register_craft({
+	output = "rusty_nodes:node_3",
+	recipe = {
+        {"","rusty_nodes:rust",""},
 		{"rusty_nodes:rust","rusty_nodes:rust","rusty_nodes:rust"},
         {"rusty_nodes:rust","","rusty_nodes:rust"},
 	}
